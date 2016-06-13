@@ -4,8 +4,6 @@ class CreateLabels < ActiveRecord::Migration
       t.string :color, null: false
       t.integer :card_id, null: false
 
-
-
       t.timestamps null: false
     end
   end
