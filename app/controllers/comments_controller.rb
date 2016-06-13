@@ -8,18 +8,20 @@ class CommentsController < ApplicationController
 	end
 
 	def create
-		@comment = Comment.new(comment_params)
+		@card = Card.find_by(id: params[:id])
+		@comment = @card.comments.new(comment_params)
 		if @comment.save
-			redirect_to @comment
+			redirect_to @card
 		else
 			render 'new'
 		end
 	end
 
 	def update
-		@comment = Comment.find_by(id: params[:id])
+		@card = Card.find_by(id: params[:id])
+		@comment = @card.comments.find_by(id: params[:id])
 		if @comment.update(comment_params)
-			redirect_to @comment
+			redirect_to @card
 		else
 			render 'edit'
 		end

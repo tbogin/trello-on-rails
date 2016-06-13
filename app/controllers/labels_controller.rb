@@ -4,9 +4,10 @@ class LabelsController < ApplicationController
 	end
 
 	def create
-		@label = Label.new(label_params)
+		@card = Card.find_by(id: params[:id])
+		@label = @card.labels.new(label_params)
 		if @label.save
-			redirect_to @label
+			redirect_to @card
 		else
 			render 'new'
 		end
