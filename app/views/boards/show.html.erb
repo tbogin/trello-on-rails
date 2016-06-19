@@ -1,1 +1,12 @@
-<h1>Hello, board show!</h1>
+<h1><%= @board.name %></h1>
+
+<section class="board-lists">
+  <% @board.lists.each do |list| %>
+    <h3 class="list-title"><%= list.title %></h3>
+    <% list.cards.each do |card| %>
+    <ul class="lists-cards">
+      <li class="card-title"><%= card.title %></li>
+    <% end %>
+    </ul>
+  <% end %>
+</section>
