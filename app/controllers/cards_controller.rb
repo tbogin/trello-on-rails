@@ -12,20 +12,18 @@ class CardsController < ApplicationController
 	end
 
 	def create
-		@board = Board.find_by(id: params[:id])
-		@card = @board.cards.new(card_params)
+		@card = Card.new(card_params)
 		if @card.save
-			redirect_to @board
+			redirect_to @card
 		else
 			render 'new'
 		end
 	end
 
 	def update
-		@board = Board.find_by(id: params[:id])
-		@card = @board.cards.find_by(id: params[:id])
+		@card = Card.find_by(id: params[:id])
 		if @card.update(card_params)
-			redirect_to @board
+			redirect_to @card
 		else
 			render 'edit'
 		end
