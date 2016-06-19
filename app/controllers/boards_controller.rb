@@ -13,7 +13,6 @@ class BoardsController < ApplicationController
 
 	def edit
 		@board = Board.find_by(id: params[:id])
-
 	end
 
 	def create

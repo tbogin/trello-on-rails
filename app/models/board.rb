@@ -1,6 +1,6 @@
 class Board < ActiveRecord::Base
-  validates :name, presence: true, on: :create, on: :update
+  validates :name, presence: true
 
   belongs_to :user
-  has_many :cards
+  has_many :lists
 end

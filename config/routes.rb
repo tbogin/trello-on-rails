@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :boards
 
+  resources :lists
+
   resources :cards, except: [:index]
 
   resources :comments, except: [:index]
