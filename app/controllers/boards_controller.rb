@@ -1,6 +1,10 @@
 class BoardsController < ApplicationController
+
+	include SessionsHelper
+
 	def index
 		@boards = Board.limit(10)
+		@board = Board.new
 	end
 
 	def show
@@ -16,7 +20,7 @@ class BoardsController < ApplicationController
 	end
 
 	def create
-		@board = Board.new(board_params)
+		@board = current_user.boards.build(board_params)
 		if @board.save
 			redirect_to @board
 		else

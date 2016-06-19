@@ -6,7 +6,7 @@
 
    <article class="new-board-form">
     <h3>Create a new board</h3>
-    <%= form_for board do |f| %>
+    <%= form_for @board do |f| %>
       <%= f.label :name %>
         <%= f.text_field :name, class: "new-board-name" %><br>
         <%= f.submit "Create", class: "create-board" %>
