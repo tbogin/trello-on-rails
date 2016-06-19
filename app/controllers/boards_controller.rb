@@ -9,6 +9,7 @@ class BoardsController < ApplicationController
 
 	def show
 		@board = Board.find_by(id: params[:id])
+		@list = List.new
 	end
 
 	def new

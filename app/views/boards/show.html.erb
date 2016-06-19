@@ -1,12 +1,24 @@
 <h1><%= @board.name %></h1>
 
+<div class="form-group">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@list) do |f| %>
+      <p><%= f.text_field :title, placeholder: "title", class: "form-control" %></p>
+      <%= f.hidden_field :board_id, value: @board.id %>
+      <%= f.submit "Create a list", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
 <section class="board-lists">
   <% @board.lists.each do |list| %>
-    <h3 class="list-title"><%= list.title %></h3>
-    <% list.cards.each do |card| %>
-    <ul class="lists-cards">
-      <li class="card-title"><%= card.title %></li>
-    <% end %>
+    <ul class="list-list">
+      <li><h3 class="list-title"><%= list.title %></h3></li>
+      <% list.cards.each do |card| %>
+      <ul class="lists-cards">
+        <li class="card-title"><%= card.title %></li>
+      <% end %>
+      </ul>
     </ul>
   <% end %>
 </section>
