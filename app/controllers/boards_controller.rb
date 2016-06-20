@@ -10,7 +10,8 @@ class BoardsController < ApplicationController
 	def show
 		@board = Board.find_by(id: params[:id])
 		@list = List.new
-		@card = Card.new
+		@card = Card.find_by(id: params[:id])
+		@new_card = Card.new
 	end
 
 	def new
