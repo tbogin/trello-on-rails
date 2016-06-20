@@ -1,4 +1,7 @@
 class ListsController < ApplicationController
+
+  include SessionsHelper
+
   def new
     @list = List.new
   end
@@ -8,8 +11,8 @@ class ListsController < ApplicationController
   end
 
   def create
-    @board = Board.find_by(id: params[:id])
-    @list = @board.lists.new(list_params)
+    @board = Board.find_by(id: params[:list][:board_id])
+    @list = current_user.lists.build(list_params)
     if @list.save
       redirect_to @board
     else
@@ -37,7 +40,7 @@ class ListsController < ApplicationController
 private
 
 def list_params
-  params.require(:list).permit(:title)
+  params.require(:list).permit(:title,:board_id)
 end
 
 end
