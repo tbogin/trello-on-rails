@@ -18,7 +18,7 @@ class CardsController < ApplicationController
     @list = List.find_by(id: params[:card][:list_id])
 		@card = current_user.cards.build(card_params)
 		if @card.save
-			redirect_to @card
+			redirect_to @list.board
 		else
 			render 'new'
 		end
@@ -27,7 +27,7 @@ class CardsController < ApplicationController
 	def update
 		@card = Card.find_by(id: params[:id])
 		if @card.update(card_params)
-			redirect_to @card
+			redirect_to @card.list
 		else
 			render 'edit'
 		end
@@ -36,7 +36,7 @@ class CardsController < ApplicationController
 	def destroy
 		@card = Card.find_by(id: params[:id])
 		@card.destroy
-		redirect_to @card
+		redirect_to @card.list 
 	end
 
 private

@@ -10,6 +10,7 @@ class BoardsController < ApplicationController
 	def show
 		@board = Board.find_by(id: params[:id])
 		@list = List.new
+		@lists = @board.lists.slice(4)
 		@card = Card.find_by(id: params[:id])
 		@new_card = Card.new
 	end
