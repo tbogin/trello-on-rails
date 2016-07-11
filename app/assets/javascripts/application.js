@@ -15,3 +15,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+  $( function() {
+    $( ".list-container" ).sortable();
+
+    $('.list-container li').sortable();
+  } );

@@ -1,7 +1,7 @@
 <h2>My Boards</h2>
 <section class="boards-container">
   <% @boards.each do |board| %>
-    <div class="board"><a href="boards/<%= board.id %>"><%= board.name %></a></div>
+    <div class="board-index-link"><a href="boards/<%= board.id %>"><%= board.name %></a></div>
   <% end %>
 
    <article class="new-board-form">
