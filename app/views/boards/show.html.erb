@@ -10,7 +10,7 @@
      <li class="list col-md-3">
         <h3 class="list-title"><%= list.title %></h3>
         <% list.cards.each do |card| %>
-          <div class="card-title"><a href="/cards/<%= card.id %>"><%= card.title %></a></div>
+          <div class="card-title" draggable="true"><a href="/cards/<%= card.id %>"><%= card.title %></a></div>
         <% end %> 
 
       <div class="form-group">
