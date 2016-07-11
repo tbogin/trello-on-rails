@@ -1,15 +1,17 @@
+<%= link_to 'Go Back', boards_path %>
+
 <div class="container">
 <main class="board">
 <h1 class="board-name"><%= @board.name %></h1>
 
-<!-- <div class="row"> -->
+<div class="row">
   <ul class="list-container">
     <% @board.lists.each do |list| %>
      <li class="list col-md-3">
         <h3 class="list-title"><%= list.title %></h3>
         <% list.cards.each do |card| %>
           <div class="card-title"><a href="/cards/<%= card.id %>"><%= card.title %></a></div>
-        <% end %>
+        <% end %> 
 
       <div class="form-group">
         <div>
@@ -25,11 +27,11 @@
 
     </li>
   </ul>
-<!-- </div> -->
+</div>
 
 <div class="form-group">
   <div class="col-md-12">
-    <%= form_for(@list) do |f| %>
+    <%= form_for(@new_list) do |f| %>
       <p><%= f.text_field :title, placeholder: "title", class: "form-control" %></p>
       <%= f.hidden_field :board_id, value: @board.id %>
       <%= f.submit "Create a list", class: "btn btn-primary" %>

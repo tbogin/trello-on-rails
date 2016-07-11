@@ -3,14 +3,13 @@ class BoardsController < ApplicationController
 	include SessionsHelper
 
 	def index
-		@boards = Board.limit(10)
+		@boards = Board.all
 		@board = Board.new
 	end
 
 	def show
 		@board = Board.find_by(id: params[:id])
-		@list = List.new
-		@lists = @board.lists.slice(4)
+		@new_list = List.new
 		@card = Card.find_by(id: params[:id])
 		@new_card = Card.new
 	end
