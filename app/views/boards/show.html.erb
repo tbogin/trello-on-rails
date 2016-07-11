@@ -2,13 +2,13 @@
 <main class="board">
 <h1 class="board-name"><%= @board.name %></h1>
 
-<div class="row">
+<!-- <div class="row"> -->
   <ul class="list-container">
     <% @board.lists.each do |list| %>
      <li class="list col-md-3">
         <h3 class="list-title"><%= list.title %></h3>
         <% list.cards.each do |card| %>
-          <div class="card-title"><a href="cards/@card.id"><%= card.title %></a></div>
+          <div class="card-title"><a href="/cards/<%= card.id %>"><%= card.title %></a></div>
         <% end %>
 
       <div class="form-group">
@@ -25,7 +25,7 @@
 
     </li>
   </ul>
-</div>
+<!-- </div> -->
 
 <div class="form-group">
   <div class="col-md-12">
