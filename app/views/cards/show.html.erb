@@ -1,1 +1,8 @@
 <h1>Hello card!</h1>
+
+<%= link_to 'delete card', card_path(@card),
+            method: :delete,
+            data: { confirm: 'Delete this card?'} %>
+
+<%= link_to 'Edit',
+      edit_card_path(@card) %>
