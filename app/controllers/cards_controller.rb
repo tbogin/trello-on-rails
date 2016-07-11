@@ -18,7 +18,7 @@ class CardsController < ApplicationController
     @list = List.find_by(id: params[:card][:list_id])
 		@card = current_user.cards.build(card_params)
 		if @card.save
-			redirect_to @card
+			redirect_to @list.board
 		else
 			render 'new'
 		end
