@@ -17,7 +17,12 @@
 //= require_tree .
 
   $( function() {
-    $( ".list-container" ).sortable();
+    $( ".list-container" ).sortable({connectWith: ".list-container"});
 
-    $('.list-container li').sortable();
+    $('.list-container li').sortable({
+      connectWith: ".list-container li"
+    });
+
+   
+
   } );
