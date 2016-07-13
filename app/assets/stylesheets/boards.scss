@@ -1,5 +1,11 @@
 .board {
   background-color: #0079bf;
+  height: 100%;
+  max-width: 100%;
+}
+
+.row {
+  height: 100%;
 }
 
 .board-name {
@@ -15,10 +21,17 @@
   max-height: 250px;
   border-radius: 1%;
   vertical-align: baseline;
+  overflow: auto;
 }
 
-ul li {
+.list-container li {
   list-style-type: none;
+  display: inline-block;
+  overflow: auto;
+}
+
+.form-group {
+  margin-top: 5%;
 }
 
 // Place all the styles related to the boards controller here.
