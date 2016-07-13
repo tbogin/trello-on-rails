@@ -13,31 +13,35 @@
           <div class="card-title" draggable="true"><a href="/cards/<%= card.id %>"><%= card.title %></a></div>
         <% end %> 
 
+        <div class="form-group">
+          <div>
+            <%= form_for(@new_card) do |f| %>
+              <p><%= f.text_field :title, placeholder: "title", class: "form-control" %></p>
+              <p><%= f.text_field :description, placeholder: "description", class: "form-control" %></p>
+              <%= f.hidden_field :list_id, value: list.id %>
+              <%= f.submit "Add a card", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </li>
+
+    <li>
       <div class="form-group">
-        <div>
-          <%= form_for(@new_card) do |f| %>
+        <div class="col-md-12">
+          <%= form_for(@new_list) do |f| %>
             <p><%= f.text_field :title, placeholder: "title", class: "form-control" %></p>
-            <p><%= f.text_field :description, placeholder: "description", class: "form-control" %></p>
-            <%= f.hidden_field :list_id, value: list.id %>
-            <%= f.submit "Add a card", class: "btn btn-primary" %>
+            <%= f.hidden_field :board_id, value: @board.id %>
+            <%= f.submit "Create a list", class: "btn btn-primary" %>
           <% end %>
         </div>
       </div>
-    <% end %>
-
     </li>
+
   </ul>
 </div>
 
-<div class="form-group">
-  <div class="col-md-12">
-    <%= form_for(@new_list) do |f| %>
-      <p><%= f.text_field :title, placeholder: "title", class: "form-control" %></p>
-      <%= f.hidden_field :board_id, value: @board.id %>
-      <%= f.submit "Create a list", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
+
 
 </main>
 </div>
