@@ -1,5 +1,7 @@
-<h2>My Boards</h2>
+
 <section class="boards-container">
+<h1>Trello-On-Rails</h1>
+<h2>My Boards</h2>
   <% @boards.each do |board| %>
     <div class="board-index-link"><a href="boards/<%= board.id %>"><%= board.name %></a></div>
   <% end %>

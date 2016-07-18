@@ -23,6 +23,4 @@
       connectWith: ".list-container li"
     });
 
-   
-
   } );

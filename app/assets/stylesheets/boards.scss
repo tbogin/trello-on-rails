@@ -1,3 +1,22 @@
+.boards-container {
+  margin-left: 1%;
+}
+
+.boards-container div {
+  display: inline-block;
+  background-color: #0079BF;
+  padding-right: 54px;
+  padding-bottom: 30px;
+  padding-left: 5px;
+  padding-top: 5px;
+  margin-left: 0.3%;
+}
+
+.boards-container div a {
+  color: white;
+  font-weight: 500;
+}
+
 .board {
   background-color: #0079bf;
   height: 100%;
