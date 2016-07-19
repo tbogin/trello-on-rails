@@ -1,0 +1,8 @@
+ <div>
+  <%= form_for(@new_card) do |f| %>
+    <p><%= f.text_field :title, placeholder: "title", class: "form-control" %></p>
+    <p><%= f.text_field :description, placeholder: "description", class: "form-control" %></p>
+      <%= f.hidden_field :list_id, value: @new_card.list.id %>
+      <%= f.submit "Add a card", class: "btn btn-primary" %>
+    <% end %>
+ </div>
